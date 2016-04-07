@@ -3,18 +3,18 @@
 <head>
   <meta charset="utf-8">
   
-  <title>关于几种数组的常见算法 | 成就你的梦想</title>
+  <title>ajax的使用步骤 | 成就你的梦想</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="摘要：数组降维，数组去重，数组出现最多的元素几个数">
+  <meta name="description" content="摘要：ajax">
 <meta property="og:type" content="article">
-<meta property="og:title" content="关于几种数组的常见算法">
-<meta property="og:url" content="http://GuoFanGG.github.io/2016/01/17/数组/index.html">
+<meta property="og:title" content="ajax的使用步骤">
+<meta property="og:url" content="http://GuoFanGG.github.io/2016/04/02/ajax的使用/index.html">
 <meta property="og:site_name" content="成就你的梦想">
-<meta property="og:description" content="摘要：数组降维，数组去重，数组出现最多的元素几个数">
-<meta property="og:updated_time" content="2016-04-01T07:15:22.737Z">
+<meta property="og:description" content="摘要：ajax">
+<meta property="og:updated_time" content="2016-04-07T03:02:33.627Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="关于几种数组的常见算法">
-<meta name="twitter:description" content="摘要：数组降维，数组去重，数组出现最多的元素几个数">
+<meta name="twitter:title" content="ajax的使用步骤">
+<meta name="twitter:description" content="摘要：ajax">
   
     <link rel="alternative" href="/atom.xml" title="成就你的梦想" type="application/atom+xml">
   
@@ -272,11 +272,11 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-数组" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-ajax的使用" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/01/17/数组/" class="article-date">
-      <time datetime="2016-01-17T13:30:14.000Z" itemprop="datePublished">2016-01-17</time>
+      <a href="/2016/04/02/ajax的使用/" class="article-date">
+      <time datetime="2016-04-02T08:57:14.000Z" itemprop="datePublished">2016-04-02</time>
 </a>
     </div>
   
@@ -289,7 +289,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      关于几种数组的常见算法
+      ajax的使用步骤
     </h1>
   
 
@@ -298,13 +298,13 @@
       <div class="article-info article-info-post">
         
     <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/web前端/">web前端</a><a class="article-category-link" href="/categories/web前端/JS/">JS</a>
+    <a class="article-category-link" href="/categories/web前端/">web前端</a><a class="article-category-link" href="/categories/web前端/ajax/">ajax</a>
     </div>
 
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/数组算法/">-数组算法</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ajax/">-ajax</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -314,21 +314,99 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>摘要：数组降维，数组去重，数组出现最多的元素几个数<br><a id="more"></a></p>
+        <p>摘要：ajax<br><a id="more"></a></p>
 <hr>
-<h3 id="数组降维"><a href="#数组降维" class="headerlink" title="数组降维"></a>数组降维</h3><ul>
-<li><p>方法1：循环嵌套</p>
-<figure class="highlight nimrod"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">Array</span>.prototype.reduceDimension=function()&#123;</span><br><span class="line">		//遍历当前二维数组,同时创建结果数组</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">var</span> r=<span class="number">0</span>,<span class="literal">result</span>=[];r&lt;this.length;r++)&#123;</span><br><span class="line">			<span class="keyword">for</span>(<span class="keyword">var</span> c=<span class="number">0</span>;c&lt;this[r].length;c++)&#123;</span><br><span class="line">				//向结果数组中压入当前元素</span><br><span class="line">				<span class="literal">result</span>.push(this[r][c]);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> <span class="literal">result</span>;//遍历结束后，返回结果数组</span><br><span class="line">  	&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="post方式"><a href="#post方式" class="headerlink" title="post方式"></a>post方式</h3><ul>
+<li><p>1、创建MXLHttpRequest对象</p>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable"><span class="keyword">var</span> xhr</span>=getXhr();</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>方法2：单层循环</p>
-<figure class="highlight nimrod"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">Array</span>.prototype.reduceDimension=function()&#123;</span><br><span class="line">     <span class="keyword">for</span>(<span class="keyword">var</span> r=<span class="number">0</span>,<span class="literal">result</span>=[];r&lt;this.length;r++)&#123;</span><br><span class="line">       <span class="literal">result</span>=<span class="literal">result</span>.concat(this[r]);</span><br><span class="line">     &#125;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>方法3：不用循环</p>
-<figure class="highlight nimrod"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">	<span class="type">Array</span>.prototype.reduceDimension=function()&#123;</span><br><span class="line">      <span class="keyword">var</span> <span class="literal">result</span>=[];</span><br><span class="line"><span class="keyword">return</span> <span class="type">Array</span>.prototype.concat.apply(<span class="literal">result</span>,this);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">var</span> data=[</span><br><span class="line">		[<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>],</span><br><span class="line">		[<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>],</span><br><span class="line">		[<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>],</span><br><span class="line">		[<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>],</span><br><span class="line">	];</span><br><span class="line">	console.log(data);</span><br><span class="line">	data=data.reduceDimension();</span><br><span class="line">	console.log(data);</span><br></pre></td></tr></table></figure>
+<li><p>2、客户端与服务器端建立连接</p>
+<figure class="highlight nimrod"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">open(<span class="keyword">method</span>,url,async)</span><br><span class="line"><span class="keyword">method</span> : get / post</span><br><span class="line">url : .php 的相关文件</span><br><span class="line">async : <span class="literal">true</span>异步(默认) <span class="literal">false</span>同步</span><br><span class="line">异步对象最新规范中，明确指出不建议使用同步</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
-<h3 id="掉数组中的重复元素"><a href="#掉数组中的重复元素" class="headerlink" title="掉数组中的重复元素"></a>掉数组中的重复元素</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">removerepeat</span>(<span class="params">arr</span>)</span>&#123;</span><br><span class="line">		<span class="keyword">var</span> temp=&#123;&#125;;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;arr.length;i++)&#123;</span><br><span class="line">			temp[arr[i]]=<span class="literal">true</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="built_in">console</span>.log(temp);</span><br><span class="line">		<span class="keyword">var</span> r=[];</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">var</span> k <span class="keyword">in</span> temp)&#123;</span><br><span class="line">			r.push(k);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> r;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">var</span> r=removerepeat([<span class="string">'a'</span>,<span class="string">'d'</span>,<span class="string">'d'</span>,<span class="string">'c'</span>,<span class="string">'h'</span>,<span class="string">'f'</span>,<span class="string">'b'</span>]);</span><br><span class="line">	<span class="comment">//console.log(r);</span></span><br></pre></td></tr></table></figure>
-<h3 id="算出数组出现最多的元素及个数"><a href="#算出数组出现最多的元素及个数" class="headerlink" title="算出数组出现最多的元素及个数"></a>算出数组出现最多的元素及个数</h3><figure class="highlight maxima"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line">function <span class="built_in">num</span>(arr)&#123;</span><br><span class="line">		<span class="built_in">var</span> count=<span class="number">1</span>;</span><br><span class="line">		<span class="built_in">var</span> yuansu=[];//存放数组中的每个不同的元素</span><br><span class="line">		<span class="built_in">var</span> <span class="built_in">sum</span>=[]; //存放不同元素出现的个数</span><br><span class="line">		<span class="keyword">for</span>(<span class="built_in">var</span> i=<span class="number">0</span>;i&lt;arr.<span class="built_in">length</span>;i++)&#123;</span><br><span class="line">			<span class="keyword">for</span>(<span class="built_in">var</span> k=i+<span class="number">1</span>;k&lt;arr.<span class="built_in">length</span>;k++)&#123;</span><br><span class="line">				<span class="keyword">if</span>(arr[i]==arr[k])&#123;</span><br><span class="line">					count++;  //用来计算当前元素的相同个数</span><br><span class="line">					arr.<span class="built_in">splice</span>(k,<span class="number">1</span>);</span><br><span class="line">					k--;  // 把k留在原地</span><br><span class="line">					</span><br><span class="line">				&#125;</span><br><span class="line"></span><br><span class="line">			&#125;</span><br><span class="line">			yuansu[i]=arr[i];//将当前的元素放到yuansu数组中</span><br><span class="line">			<span class="built_in">sum</span>[i]=count;// 并将当前多少个这样的元素的数目放到<span class="built_in">sum</span>数组中</span><br><span class="line">			count=<span class="number">1</span>; //再将count重新赋值，进入下个元素上的判断</span><br><span class="line">		&#125;</span><br><span class="line">		//算出不同元素出现的个数</span><br><span class="line">		<span class="built_in">var</span> str='';</span><br><span class="line">		<span class="keyword">for</span>(<span class="built_in">var</span> i=<span class="number">0</span>;i&lt;yuansu.<span class="built_in">length</span>;i++)&#123;</span><br><span class="line">			//console.<span class="built_in">log</span>(yuansu);</span><br><span class="line">			//console.<span class="built_in">log</span>(yuansu.<span class="built_in">length</span>);</span><br><span class="line">			str+=yuansu[i]+<span class="string">"出现的次数为："</span>+<span class="built_in">sum</span>[i]+'; ';</span><br><span class="line">		&#125;</span><br><span class="line">		//console.<span class="built_in">log</span>(str);</span><br><span class="line">		<span class="built_in">var</span> newsum=[];</span><br><span class="line">		<span class="keyword">for</span>(<span class="built_in">var</span> <span class="built_in">key</span> <span class="keyword">in</span> <span class="built_in">sum</span>)&#123;</span><br><span class="line">			newsum[<span class="built_in">key</span>]=<span class="built_in">sum</span>[<span class="built_in">key</span>];</span><br><span class="line">		&#125;</span><br><span class="line">		//console.<span class="built_in">log</span>(newsum);</span><br><span class="line">		newsum.<span class="built_in">sort</span>();//考虑浏览器兼容性，需自定义<span class="built_in">sort</span>方法，这里不当重点</span><br><span class="line">		<span class="built_in">var</span> <span class="built_in">first</span>='';// 存放出现最最多的元素</span><br><span class="line">		<span class="built_in">var</span> fcount=<span class="number">0</span>;//计算出现次数最多的元素总共有所少个</span><br><span class="line">		<span class="keyword">for</span>(<span class="built_in">var</span> i=<span class="number">0</span>;i&lt;<span class="built_in">sum</span>.<span class="built_in">length</span>;i++)&#123;</span><br><span class="line">			<span class="keyword">if</span>(<span class="built_in">sum</span>[i]==newsum[newsum.<span class="built_in">length</span>-<span class="number">1</span>])&#123;</span><br><span class="line">				<span class="built_in">first</span>+=<span class="string">"出现最多的元素是:"</span>+yuansu[i]+<span class="string">";次数为:"</span>+<span class="built_in">sum</span>[i];</span><br><span class="line">				fcount++;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		document.write(<span class="string">"出现元素最多的元素有"</span>+fcount+<span class="string">"个&lt;br/&gt;"</span>+<span class="built_in">first</span>)</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">num</span>([<span class="number">10</span>,<span class="number">20</span>,<span class="number">10</span>,<span class="number">10</span>,<span class="number">30</span>,<span class="number">20</span>,<span class="number">54</span>,<span class="number">15</span>,<span class="number">58</span>,<span class="number">15</span>,<span class="number">12</span>,<span class="number">15</span>]);//测试代码</span><br></pre></td></tr></table></figure>
+<figure class="highlight sml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">xhr.<span class="keyword">open</span>(<span class="symbol">'post'</span>,<span class="symbol">'php</span>.php',<span class="literal">true</span>)；</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>3、客户端向服务器发送请求数据send(data),格式 - name=value&amp;name=value</p>
+<ul>
+<li>post方式，前提：通过send()方法发送数据前，设置请求头信息<figure class="highlight hsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">xhr.setRequestHeader(<span class="string">'Content-Type'</span>,<span class="string">'application/x-www-form-urlencoded'</span>)<span class="comment">;</span></span><br><span class="line">xhr.send(<span class="string">'user=Alice&amp;pwd=123456'</span>)<span class="comment">;</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>4、客户端接收服务器端的响应数据</p>
+<ul>
+<li><p>客户端监听服务器端通信状态，使用onreadystatechange</p>
+<figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">xhr.onreadystatechange=<span class="function"><span class="keyword">function</span><span class="params">()</span></span>&#123;&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>readyState属性，服务器端5个状态：</p>
+<figure class="highlight basic"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">0 </span>-（服务器端）  未初始化</span><br><span class="line"><span class="symbol">1 </span>-（与服务器端）正在连接</span><br><span class="line"><span class="symbol">2 </span>-（服务器端）  正在接收</span><br><span class="line"><span class="symbol">3 </span>-（服务器端）  正在响应</span><br><span class="line"><span class="symbol">4 </span>-（服务器端）  响应结束</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>使用状态码status监听状态码，200为ok，确保请求地址正确</p>
+<figure class="highlight fortran"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">xhr.onreadystatechange=<span class="function"><span class="keyword">function</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(xhr.readyState==<span class="number">4</span>&amp;&amp;xhr.<span class="keyword">status</span>==<span class="number">200</span>)&#123;</span><br><span class="line">		var <span class="keyword">data</span>=xhr.responseText;</span><br><span class="line">		console.<span class="built_in">log</span>(<span class="keyword">data</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>定义创建XMLHttpRequest对象的函数</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getXhr</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">var</span> xhr=<span class="keyword">null</span>;</span><br><span class="line">	<span class="keyword">if</span>(window.XMLHttpRequest)&#123;</span><br><span class="line">		xhr=<span class="keyword">new</span> XMLHttpRequest();</span><br><span class="line">	&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">		xhr=ActiveXObject(<span class="string">'Microsoft.XMLHttp);</span><br><span class="line">	&#125;</span><br><span class="line">	return xhr;</span><br><span class="line">&#125;</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="php文件的简单编写"><a href="#php文件的简单编写" class="headerlink" title="php文件的简单编写"></a>php文件的简单编写</h3><ul>
+<li><p>以“&lt;?php”开头，“?&gt;”结尾，文件以.php结尾(php.php)</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="php"><span class="meta">&lt;?php</span></span><br><span class="line"></span><br><span class="line"><span class="meta">?&gt;</span></span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>接收客户端发送的请求数据</p>
+<figure class="highlight xquery"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$user =$_POST[<span class="string">'user'</span>];</span><br><span class="line">$pwd = $_POST[<span class="string">'pwd'</span>];</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>向客户端进行响应</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="string">"<span class="variable">$user</span> : <span class="variable">$pwd</span>"</span>;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="get方式"><a href="#get方式" class="headerlink" title="get方式"></a>get方式</h3><ul>
+<li><p>1、创建MXLHttpRequest对象</p>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable"><span class="keyword">var</span> xhr</span>=getXhr();</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>2、客户端与服务器端建立连接</p>
+<ul>
+<li>get方式下，请求数据写在open-urlde ？ 后，“name=value”<figure class="highlight nimrod"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">open(<span class="keyword">method</span>,url,async)</span><br><span class="line"><span class="keyword">method</span> : get / post</span><br><span class="line">url : .php 的相关文件</span><br><span class="line">async : <span class="literal">true</span>异步(默认) <span class="literal">false</span>同步</span><br><span class="line">异步对象最新规范中，明确指出不建议使用同步</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight ocaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">xhr.<span class="keyword">open</span>(<span class="symbol">'get'</span>,<span class="symbol">'php</span>.php？name=<span class="keyword">value</span>&amp;name=value',<span class="literal">true</span>);</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>3、客户端向服务器发送请求数据send(data),格式 - name=value&amp;name=value</p>
+<ul>
+<li>GET方式请求时，send()方法实际上是无效的，相当于send(null)<figure class="highlight autoit"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">xhr.<span class="built_in">send</span>(<span class="literal">null</span>)<span class="comment">;</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>4、客户端接收服务器端的响应数据</p>
+<ul>
+<li><p>客户端监听服务器端通信状态，使用onreadystatechange</p>
+<figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">xhr.onreadystatechange=<span class="function"><span class="keyword">function</span><span class="params">()</span></span>&#123;&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>readyState属性，服务器端5个状态：</p>
+<figure class="highlight basic"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">0 </span>-（服务器端）  未初始化</span><br><span class="line"><span class="symbol">1 </span>-（与服务器端）正在连接</span><br><span class="line"><span class="symbol">2 </span>-（服务器端）  正在接收</span><br><span class="line"><span class="symbol">3 </span>-（服务器端）  正在响应</span><br><span class="line"><span class="symbol">4 </span>-（服务器端）  响应结束</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>使用状态码status监听状态码，200为ok，确保请求地址正确</p>
+<figure class="highlight fortran"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">xhr.onreadystatechange=<span class="function"><span class="keyword">function</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(xhr.readyState==<span class="number">4</span>&amp;&amp;xhr.<span class="keyword">status</span>==<span class="number">200</span>)&#123;</span><br><span class="line">		var <span class="keyword">data</span>=xhr.responseText;</span><br><span class="line">		console.<span class="built_in">log</span>(<span class="keyword">data</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>定义创建XMLHttpRequest对象的函数</p>
+<figure class="highlight qml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getXhr</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	<span class="built_in">var</span> xhr=<span class="literal">null</span>;</span><br><span class="line">	<span class="keyword">if</span>(<span class="built_in">window</span>.XMLHttpRequest)&#123;</span><br><span class="line">		xhr=<span class="keyword">new</span> XMLHttpRequest();</span><br><span class="line">	&#125;<span class="decorator"><span class="keyword">else</span></span>&#123;</span><br><span class="line">		xhr=ActiveXObject(<span class="string">'Microsoft.XMLHttp'</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> xhr;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="php文件的简单编写-1"><a href="#php文件的简单编写-1" class="headerlink" title="php文件的简单编写"></a>php文件的简单编写</h3><ul>
+<li><p>以“&lt;?php”开头，“?&gt;”结尾，文件以.php结尾(php.php)</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="php"><span class="meta">&lt;?php</span></span><br><span class="line"></span><br><span class="line"><span class="meta">?&gt;</span></span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>接收客户端发送的请求数据</p>
+<figure class="highlight xquery"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$name =$_GET[<span class="string">'name'</span>];</span><br><span class="line">$name = $_GET[<span class="string">'name'</span>];</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>向客户端进行响应</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="string">"<span class="variable">$name</span> : <span class="variable">$name</span>"</span>;</span><br></pre></td></tr></table></figure></li>
+</ul>
+
       
     </div>
     
@@ -336,13 +414,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2016/01/17/数组/">关于几种数组的常见算法</a></p>
+        <p><span>本文标题:</span><a href="/2016/04/02/ajax的使用/">ajax的使用步骤</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 GF 的个人博客">GF</a></p>
-        <p><span>发布时间:</span>2016年01月17日 - 21时30分</p>
-        <p><span>最后更新:</span>2016年04月01日 - 15时15分</p>
+        <p><span>发布时间:</span>2016年04月02日 - 16时57分</p>
+        <p><span>最后更新:</span>2016年04月07日 - 11时02分</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2016/01/17/数组/" title="关于几种数组的常见算法">http://GuoFanGG.github.io/2016/01/17/数组/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://GuoFanGG.github.io/2016/01/17/数组/　　作者: GF" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2016/04/02/ajax的使用/" title="ajax的使用步骤">http://GuoFanGG.github.io/2016/04/02/ajax的使用/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://GuoFanGG.github.io/2016/04/02/ajax的使用/　　作者: GF" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script src="/js/clipboard.min.js"></script>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
@@ -355,18 +433,18 @@
 
 <nav id="article-nav">
   
-    <a href="/2016/04/01/html5新特性/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2016/04/02/ajax概述/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption"><</strong>
       <div class="article-nav-title">
         
-          html5十五大新特性
+          ajax介绍
         
       </div>
     </a>
   
   
-    <a href="/2016/01/17/jQuery与ajax/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">关于几种数组的常见算法</div>
+    <a href="/2016/04/01/html5新特性/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">html5十五大新特性</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -377,7 +455,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#数组降维"><span class="toc-number">1.</span> <span class="toc-text">数组降维</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#掉数组中的重复元素"><span class="toc-number">2.</span> <span class="toc-text">掉数组中的重复元素</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#算出数组出现最多的元素及个数"><span class="toc-number">3.</span> <span class="toc-text">算出数组出现最多的元素及个数</span></a></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#post方式"><span class="toc-number">1.</span> <span class="toc-text">post方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#php文件的简单编写"><span class="toc-number">2.</span> <span class="toc-text">php文件的简单编写</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#get方式"><span class="toc-number">3.</span> <span class="toc-text">get方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#php文件的简单编写-1"><span class="toc-number">4.</span> <span class="toc-text">php文件的简单编写</span></a></li></ol>
 </div>
 <style>
     .left-col .switch-btn {
@@ -439,7 +517,7 @@
     
       <div class="duoshuo" id="comments">
     <!-- 多说评论框 start -->
-    <div class="ds-thread" data-thread-key="2016/01/17/数组/" data-title="关于几种数组的常见算法" data-url="http://GuoFanGG.github.io/2016/01/17/数组/"></div>
+    <div class="ds-thread" data-thread-key="2016/04/02/ajax的使用/" data-title="ajax的使用步骤" data-url="http://GuoFanGG.github.io/2016/04/02/ajax的使用/"></div>
     <!-- 多说评论框 end -->
     <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
     <script type="text/javascript">
@@ -462,13 +540,13 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2016/04/01/html5新特性/" title="上一篇: html5十五大新特性">
+            <a href="/2016/04/02/ajax概述/" title="上一篇: ajax介绍">
                 <i class="fa fa-angle-left"></i>
             </a>
         
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
         
-            <a href="/2016/01/17/jQuery与ajax/" title="下一篇: 关于几种数组的常见算法">
+            <a href="/2016/04/01/html5新特性/" title="下一篇: html5十五大新特性">
                 <i class="fa fa-angle-right"></i>
             </a>
         
